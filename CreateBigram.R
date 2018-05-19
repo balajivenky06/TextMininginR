@@ -32,7 +32,7 @@ text_bigrams = function(txt)
     unnest_tokens(bigram, text, 
                   token = "ngrams", n = 2) %>%
     group_by(doc)%>%
-    count(bigram, sort=TRUE) %>% filter(n > 20)
+    count(bigram, sort=TRUE) %>% filter(n > 10)
   #bigrams_dtm <- tidy_text %>% cast_sparse(doc, bigram, n)
   return(tidy_text)
 }
